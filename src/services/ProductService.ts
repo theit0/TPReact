@@ -1,5 +1,5 @@
 import { Product } from "../types/Product";
-const BASE_URL = "https://fakestoreapi.com/";
+const BASE_URL = "https://fakestoreapi.com";
 
 export const ProductService = {
     getProducts:async ():Promise<Product[]> => {
@@ -27,7 +27,7 @@ export const ProductService = {
     },
 
     updateProduct:async (id:number,product:Product):Promise<Product> => {
-        const response = await fetch(`${BASE_URL}/products/`,{
+        const response = await fetch(`${BASE_URL}/products/${id}`,{
             method:"PUT",
             headers :{
                 'Content-Type':'application/json'
@@ -37,4 +37,10 @@ export const ProductService = {
         const data = await response.json();
         return data;
     },
+
+    deleteProduct:async (id:number):Promise<void> => {
+        await fetch(`${BASE_URL}/products/${id}`,{
+            method:"DELETE"
+        });
+    }
 }

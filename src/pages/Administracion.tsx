@@ -1,7 +1,10 @@
+import ProductTable from "../components/ProductTable/ProductTable"
 
 const Administracion = () => {
   return (
-    <div>Administracion</div>
+    <div>
+      <ProductTable/>
+    </div>
   )
 }
 export default Administracion
