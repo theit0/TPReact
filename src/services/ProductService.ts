@@ -1,6 +1,5 @@
-import { useState } from "react";
+
 import { Product } from "../types/Product";
-import { ModalType } from "../types/ModalType";
 const BASE_URL = "https://fakestoreapi.com";
 
 export const ProductService = {
